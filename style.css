@@ -1,0 +1,206 @@
+/* 引入 Google 的好看中文字體 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap');
+
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+    /* 加上一點非常淡的漸層背景 */
+    background: linear-gradient(135deg, #fdfbfb 0%, #ebedee 100%);
+    text-align: center;
+    margin: 0;
+    padding: 30px;
+    color: #333;
+    min-height: 100vh;
+}
+
+h1 {
+    color: #e53935;
+    font-size: 2.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+/* 搜尋區塊美化 */
+.search-container {
+    margin-bottom: 40px;
+}
+
+input {
+    padding: 12px 20px;
+    font-size: 16px;
+    border-radius: 25px; /* 膠囊狀輸入框 */
+    border: 2px solid #ddd;
+    outline: none;
+    transition: border-color 0.3s;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+
+input:focus {
+    border-color: #e53935; /* 點擊輸入時外框變紅 */
+}
+
+button {
+    padding: 12px 25px;
+    font-size: 16px;
+    background-color: #e53935;
+    color: white;
+    border: none;
+    border-radius: 25px; /* 膠囊狀按鈕 */
+    cursor: pointer;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(229, 57, 53, 0.3);
+    transition: transform 0.2s, background-color 0.2s;
+    margin: 0 5px;
+}
+
+/* 滑鼠移到按鈕上時會稍微放大並變色 */
+button:hover {
+    transform: translateY(-2px);
+    background-color: #d32f2f;
+}
+
+.random-btn {
+    background-color: #fbbf24;
+    color: #333;
+    box-shadow: 0 4px 6px rgba(251, 191, 36, 0.3);
+}
+
+.random-btn:hover {
+    background-color: #f59e0b;
+}
+
+/* 儀表板排版：讓卡片和圖表左右並排，畫面太窄時自動變成上下疊加 */
+.dashboard {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* 統一設定兩張卡片的外觀 */
+#card, #chart-box {
+    background: white;
+    flex: 1; /* 讓兩張卡片平分寬度 */
+    min-width: 300px;
+    max-width: 400px;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08); /* 更柔和的高級陰影 */
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 滑鼠碰到卡片時會浮起來 */
+#card:hover, #chart-box:hover {
+    transform: translateY(-5px);
+}
+
+/* 美化寶可夢圖片，加上一點光影 */
+#card img {
+    width: 180px;
+    filter: drop-shadow(0 10px 10px rgba(0,0,0,0.2));
+}
+
+#card h2 {
+    font-size: 2rem;
+    margin: 10px 0;
+    color: #2c3e50;
+}
+
+#card p {
+    background-color: #f0f2f5;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: bold;
+    color: #555;
+    letter-spacing: 1px;
+}
+
+/* === 屬性徽章的設計 === */
+.types-container {
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* 徽章之間的間距 */
+}
+
+.type-badge {
+    padding: 6px 15px;
+    border-radius: 20px; /* 變成圓角膠囊狀 */
+    color: white; /* 文字統一為白色 */
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    
+    /* 加上一點文字陰影，讓白色文字在淺色背景上也能看清楚 */
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5); 
+    
+    /* 加上一點外陰影，看起來更有立體感 */
+    box-shadow: 0 3px 6px rgba(0,0,0,0.15);
+    
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+/* === 進化路線的設計 === */
+.evo-container {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 2px dashed #eee; /* 在屬性和進化路線之間加一條虛線 */
+}
+
+.evo-title {
+    font-size: 16px;
+    color: #7f8c8d;
+    margin-bottom: 15px;
+}
+
+.evo-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.evo-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer; /* 滑鼠移過去變成手指 */
+    transition: transform 0.2s;
+}
+
+.evo-item:hover {
+    transform: scale(1.1); /* 滑鼠移過去會放大，提示可以點擊 */
+}
+
+.evo-item img {
+    width: 60px; /* 進化路線的小圖標 */
+    height: 60px;
+    background-color: #f8f9fa;
+    border-radius: 50%;
+    margin-bottom: 5px;
+}
+
+.evo-item p {
+    margin: 0;
+    font-size: 12px;
+    color: #333;
+    text-transform: capitalize; /* 英文首字母大寫 */
+    background-color: transparent !important; /* 蓋掉之前 p 標籤的背景 */
+    padding: 0 !important;
+}
+
+/* 加上 #card 來提升權重，打敗上面的主圖片設定 */
+#card .evo-item img {
+    width: 60px !important;  /* 強制寬度為 60px */
+    height: 60px;
+    background-color: #f8f9fa;
+    border-radius: 50%;
+    margin-bottom: 5px;
+    object-fit: contain; /* 確保圖片乖乖待在圓圈裡，絕對不變形 */
+}

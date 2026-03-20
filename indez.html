@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Pokemon Viewer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>✨ Pokemon Viewer ✨</h1>
+    
+    <div class="search-container">
+        <input type="text" id="pokemonName" placeholder="輸入寶可夢名稱或編號">
+        <button onclick="getPokemon()">搜尋</button>
+        <button onclick="getRandomPokemon()" class="random-btn">隨機抽卡 🎲</button>
+    </div>
+
+    <div class="dashboard">
+        <div id="card">
+            <p style="color: #ccc; margin-top: 50px;">請輸入名字或點擊隨機抽卡！</p>
+        </div>
+        
+        <div id="chart-box">
+            <canvas id="myChart"></canvas>
+        </div>
+        </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
